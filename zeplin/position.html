@@ -8,8 +8,9 @@
     <title>Document</title>
 </head>
 <body>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <!-- pos-r: position:relative의 약어로 그냥 class명 쓰기 편하게 하기 위해 씀 -->
-    <div class="pos-r">
+    <!-- <div class="pos-r">
         <h2>relactive</h2>
         <p>※ position: relative</p>
         <div>
@@ -20,18 +21,197 @@
             position:relative;
             left:100px; top:100px;
         </div>
+
+        <div class="ex2">
+            <p>부모(relative) -> 자손or후속(absolute)</p>
+        </div>
+    </div> -->
+
+
+
+    <!-- <div class="pos-a">
+        <h2>absolute</h2>
+        <p>※ position: absolute</p>
+        <div>
+            <p>ㄴ절대좌표(left, right, top, bottom)</p>
+            <p>ㄴ브라우저 기준으로 위치값을 설정</p>
+            <p>ㄴ팝업(공지사항)등에 쓰임</p>
+        </div>
+        <div class="ex">
+            position:absolute;
+            left:0px; top:0px;
+            <a href="">X</a>
+        </div>
+    </div> -->
+
+
+    <div class="pos-f">
+        <h2>fixed</h2>
+        <p>※ position: fixed</p>
+        <div>
+            <p>ㄴ고정좌표(left, right, top, bottom)</p>
+            <p>ㄴ브라우저 기준으로 위치값을 설정</p>
+            <p>ㄴ공중에 콘텐츠가 띄어진다.</p>
+            <p>ㄴ헤더, 사이드 배너, 버거메뉴</p>
+            <p>ㄴ스크롤에 반응하지 않음</p>
+        </div>
+        <div class="ex">
+            position:absolute;
+            left:0px; top:0px;
+            <a href="">X</a>
+        </div>
     </div>
+
+    <div class="self">
+        <img src="./img/img__ex2.jpg" alt="">
+        <p>이미지 제목...</p>
+    </div>
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
     <style>
-        .pos-r .ex{
+        /* .pos-r .ex{
              background-color: yellow;
              position:relative;
-            left:100px; top:100px;
+            left:100px; top:100px; */
             /*
             static, relative는 본래 display를 유지하지만 ex-> <div>: box, <span>: inline등,
             absolute, fixed는 유지안하고 inline마냥 됨.
             absolute
-            */
+            */          
+            /* } */
+            /* .pos-r .ex{
+                background-color: yellow;
+                position: relative;
+                left:0px; top:0px;
             }
+            .pos-r .ex2{
+                position: relative; 
+                width: 400px; height: 300px;
+                border: 5px solid red;
+            }
+            .pos-r .ex2>p{
+                position:absolute;
+                bottom:0; right:0;
+                background-color: green;
+                margin: 0;
+            } */
     </style>
+
+
+
+
+<style>
+    .pos-a{
+        margin:200px 0;
+        border: 1px solid black;
+    }
+    .pos-a .ex{
+        width:400px; height:400px;
+        position: relative;
+        left: calc(50% - 200px); 
+        top: calc(50% - 200px);
+        /* margin: -200px 0 0 -200px;
+        마진 음수값은 바깥쪽으로 간다고 보면됨.
+        absolute포지션의 left, top 둘다 50% 주고 요소의 너비, 높이 반씩 반대로 가면
+        요소는 브라우저의 중앙에 위치하게 됨 */
+        background-color: aqua;
+    }
+</style>
+
+
+
+
+
+<style>
+    .pos-f{
+        /* transform:scale(1); */
+        /*위에 거 쓰면 fixed가 absolute처럼 갇힘
+          ※ fixed도 갇히는 경우가 있다.*/
+    }
+    .pos-f .ex{
+        position:fixed; right: 5%; top: 3%;
+        background-color: blueviolet;
+        padding:50px;
+    }
+</style>
+
+
+
+
+<style>
+    .self{
+        width: 400px; 
+        margin: 100px auto;
+        border: 3px solid black;
+        /*이거 안 쓰면 .self>p에 부모가 없어서(정확히는 기준이 없음)
+        브라우저로*/
+        position: relative;
+    }
+
+    .self>img{
+        width:100%;
+        vertical-align: middle;
+        /*
+        인라인, 인라인-박스에 수직 정렬 해주는 코드
+        이미지의 기본 폰트사이즈 없애줌
+        매번 이미지에 이거 넣기 힘드니 맨 위에 모든 img태그에 넣도록 해주삼
+        */
+    }
+
+    .self>p{
+        position: absolute;
+        left:0; bottom:0;
+        background-color: rgba(255,0,0,0.5);
+        color: rgba(#FFF,0,0,0.5);
+        /* 글자는 안 희미해지고 선명함*/
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        /* opacity: 30%;  */
+        /* 글자까지 희미해짐 */
+
+        /* 
+        hover이슈: hover에 들어가는 명령은 기본값에 이미 명령이 들어가야 함
+        안 그러면 :hover에서 없던 게 추가되는 거
+        height, display등 없던 거 넣어줌 
+        */
+        height: 50%;
+        display: flex; 
+        align-items:center; 
+        justify-content: center;
+
+        /*
+        변형될 때 1초동안 스무스하게 변형시켜달라는 명령어
+        transition쓸 때, :hover등 하기 전 기본으로 있던 값 안 넣으면 스무스하게 
+        되는 게 아닌 없던 게 툭 튀어나오듯이 됨
+        */
+        transition: 1s;
+    }
+    /* 부모에다가 :hover 써주고 자식(ex p태그)에게 속성값 줄 수 있음 */
+    .self:hover >p{
+        height: 100%;
+        display: flex; 
+        align-items:center; 
+        justify-content: center;
+    }
+</style>
+
 </body>
 </html>
