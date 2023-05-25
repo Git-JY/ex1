@@ -63,6 +63,7 @@
             let total;
             total = html+css+js;
             console.log(total); //180 
+
             avg = total/3;
             console.log(avg); //60 
 
@@ -81,12 +82,6 @@
             <span>0</span>
             <button>+</button>
         </div>
-
-        <style>
-            .count{
-                width: 100px;
-            }
-        </style>
 
         <script>
             const elBtn = document.querySelectorAll('.count button'),
@@ -109,11 +104,7 @@
                     //  num이 10 미만일때만 증가 시킬 수 있음
                     if(num < 10)
                         elSpan.textContent = ++num;
-                  }
-
-
-
-                  
+                  }     
         </script>
         
 </body>
