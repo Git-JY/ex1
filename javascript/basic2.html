@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="member">
+
+    </div>
+
+
+
+
+
+    <script>
+        return;
+        let name = prompt('당신의 이름은 무엇인가요?'); 
+        //prompt에 사용자가 입력한 문자열('확인'을 누른 경우)은 변수 name에 들어간다.\
+        let tel = prompt('전화번호?');
+        
+        // 홍길동 회원님 반갑습니다.
+        // 연락처는 101-1004입니다.       
+
+        name + "회원님 반갑습니다."
+        "연락처는" + tel + "입니다."
+
+        console.log(`${name} 회원님 반갑습니다. 
+연락처는 ${tel}입니다.`);
+
+        const member = document.querySelector('.member');
+        member.textContent = `'${name}' 회원님 반갑습니다. 연락처는 ${tel} 입니다.`;
+    </script>
+    
+    <script>
+        return;
+        // let html = prompt('html 점수는'),
+        //     css = prompt('css 점수는');
+
+        //     console.log(html + css); //연산안됨
+        //     console.log(typeof html); // string 문자로 인식하기 때문
+
+        let html = Number(prompt('html 점수는')), //이러면 숫자(number)로 인식
+            css = Number(prompt('css 점수는'));
+
+            console.log(html + css); //이제 계산 잘 됨
+            console.log(typeof html); //number
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="ex">
+        <button>01</button>
+        <button>02</button>
+    </div>
+
+    <style>
+        .on{
+            background-color: red; 
+            color: white;
+        }
+    </style>
+    
+    <script>
+        const elBtn = document.querySelectorAll('.ex button'); // 버튼이 2개니, All쓰기
+                
+        elBtn[0].onclick = function(){
+            elBtn[1].className = '';
+            elBtn[0].className = 'on';
+        }
+
+        elBtn[1].onclick = function(){
+            elBtn[0].className = '';
+            elBtn[1].className = 'on';
+        }
+        
+    </script>
+</body>
+</html>
